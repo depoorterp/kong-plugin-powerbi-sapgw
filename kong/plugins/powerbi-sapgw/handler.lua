@@ -67,7 +67,11 @@ function plugin:access(plugin_conf)
 
   -- your custom code here
   kong.log.inspect(plugin_conf)   -- check the logs for a pretty-printed config!
-  kong.service.request.set_header(plugin_conf.request_header, "this is on a request")
+  local auth_header = kong.request.get_header(plugin_conf.auth_header)
+  if not auth_header then 
+    kong.response.set_header(plugin_conf.auth_header, "this is on a request")
+  --  return kong.response.exit(401, 'Unauthorized.')
+  end  
 
 end --]]
 
@@ -76,7 +80,7 @@ end --]]
 function plugin:header_filter(plugin_conf)
 
   -- your custom code here, for example;
-  kong.response.set_header(plugin_conf.response_header, "this is on the response")
+--   kong.response.set_header(plugin_conf.response_header, "this is on the response")
 
 end --]]
 

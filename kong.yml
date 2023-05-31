@@ -1,0 +1,70 @@
+_transform: false
+_format_version: '3.0'
+parameters:
+- value: d348bf30-e1dd-44d9-b16c-9d780af0a8da
+  created_at: ~
+  key: cluster_id
+services:
+- updated_at: 1685194307
+  path: /anything
+  host: httpbin.org
+  port: 80
+  client_certificate: ~
+  tags: ~
+  retries: 5
+  tls_verify: ~
+  tls_verify_depth: ~
+  write_timeout: 60000
+  name: httpbin
+  enabled: true
+  ca_certificates: ~
+  id: b4470c6b-2031-440f-8f00-8106d4200462
+  created_at: 1685194307
+  connect_timeout: 60000
+  protocol: http
+  read_timeout: 60000
+routes:
+- updated_at: 1685194481
+  paths:
+  - /
+  protocols:
+  - http
+  - https
+  sources: ~
+  destinations: ~
+  service: b4470c6b-2031-440f-8f00-8106d4200462
+  methods: ~
+  preserve_host: false
+  snis: ~
+  name: ~
+  tags: ~
+  https_redirect_status_code: 426
+  strip_path: true
+  request_buffering: true
+  response_buffering: true
+  headers: ~
+  hosts: ~
+  regex_priority: 0
+  path_handling: v0
+  id: 8d18df2b-cc30-4e7b-9263-62cccac50720
+  created_at: 1685194481
+plugins:
+- updated_at: 1685194772
+  tags: ~
+  consumer: ~
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https
+  config:
+    request_header: Hello-World
+    ttl: 600
+    response_header: Bye-World
+  name: powerbi-sapgw
+  enabled: true
+  route: ~
+  id: 14fcd211-0a77-4e39-abc6-e89b9dc1d47c
+  service: ~
+  instance_name: ~
+  created_at: 1685194772

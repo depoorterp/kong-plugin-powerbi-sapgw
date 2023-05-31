@@ -1,7 +1,7 @@
 local typedefs = require "kong.db.schema.typedefs"
 
 
-local PLUGIN_NAME = "myplugin"
+local PLUGIN_NAME = "powerbi-sapgw"
 
 
 local schema = {
@@ -18,6 +18,9 @@ local schema = {
           { request_header = typedefs.header_name {
               required = true,
               default = "Hello-World" } },
+          { auth_header = typedefs.header_name {
+                required = true,
+                default = "authorization" } },
           { response_header = typedefs.header_name {
               required = true,
               default = "Bye-World" } },
